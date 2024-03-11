@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/estilo1.css">
+    <!-- Agrega el enlace al archivo de estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Consulta 1</title>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Rentas por Comunidad Autónoma</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Comunidades Autonomas</th>
+                            <th>Tipos de Rentas</th>
+                            <th>Periodos</th>
+                            <th>Renta Media Anual</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Aquí utilizamos Thymeleaf para iterar sobre la lista de datos y mostrar cada fila -->
+                        <tr th:each="dato : ${datos}">
+                            <td th:text="${dato.id}"></td>
+                            <td th:text="${dato.comunidadA}"></td>
+                            <td th:text="${dato.tipoR}"></td>
+                            <td th:text="${dato.periodo}"></td>
+                            <td th:text="${dato.rentaM}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Agrega el enlace al archivo de scripts de Bootstrap y de jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

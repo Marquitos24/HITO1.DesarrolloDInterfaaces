@@ -1,0 +1,2 @@
+ALTER TABLE renta_hogares
+ADD COLUMN id SERIAL PRIMARY KEY;
